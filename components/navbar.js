@@ -17,8 +17,11 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import Home from '../pages/home';
 
 const Links = ['Home', 'News', 'About'];
+
+
 
 const NavLink = ({ children }, { children: ReactNode }) => (
   <Link
@@ -29,14 +32,21 @@ const NavLink = ({ children }, { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={children.toLowerCase()}>
+    href={children.toLowerCase()==='home'? '/':children.toLowerCase()}>
     {children}
   </Link>
 );
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const Linkz =[
+    {link:'/',
+    route:'home'},
+    {link:'/about',
+    route:'about'},
+  ]
+  
+  
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -54,6 +64,7 @@ export default function Simple() {
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
+               
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
