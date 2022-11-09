@@ -19,7 +19,7 @@ import {
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { MdLocalShipping } from 'react-icons/md';
   
-  export default function NewsPost() {
+  export default function NewsAd() {
     return (
       <Container maxW={'7xl'}>
         <SimpleGrid

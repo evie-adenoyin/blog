@@ -1,9 +1,17 @@
 import React from 'react'
-
-const NewsList = () => {
+import Hero from '../components/hero'
+import NewsList from '../components/newslist'
+import HeaderPage from '../components/headerpage'
+import NewsAd from '../components/newsad';
+const News = () => {
   return (
-    <div>NewsList</div>
+  <div>
+      <HeaderPage />
+      <NewsList header = "Latest news"/>
+      <NewsAd />
+      <NewsList header = "You May Also Like"/> 
+  </div>  
   )
 }
 
-export default NewsList
+export default News

@@ -1,13 +1,14 @@
 import Head from 'next/head'
 // import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
+
 // import Layout from '../components/layout'
-import News from '../components/news';
+import NewsHeading from '../components/newsheading';
 import CallToActionWithVideo from '../components/cta';
 import Newsletter from '../components/newsletter';
-import NewsPost from '../components/newsPost';
+import NewsAd from '../components/newsad';
 import Hero from '../components/hero';
 import Testimony from '../components/testimonies';
+import NewsList from '../components/newslist';
 
 export default function Home() {
   return (
@@ -20,10 +21,11 @@ export default function Home() {
       </Head>
 
       <Hero />
-      <News />
+      <NewsHeading />
+      <NewsList header = "Today's news" />
       <Hero />
       <CallToActionWithVideo />
-      <NewsPost />
+      <NewsAd />
       {/* <Newsletter /> */}
       <Hero />
       <Testimony />

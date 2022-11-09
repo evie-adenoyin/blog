@@ -16,7 +16,7 @@ import {
   
   export default function CallToActionWithVideo() {
     return (
-      <Container maxW={'7xl'} p={{base:'2', sm:'10'}}>
+      <Container maxW={'7xl'} my={{sm:'8rem'}}>
         <Stack
           align={'center'}
           spacing={{ base: 8, md: 10 }}
@@ -94,7 +94,7 @@ import {
               position={'relative'}
               height={'300px'}
               rounded={'2xl'}
-              boxShadow={'2xl'}
+              // boxShadow={'2xl'}
               width={'full'}
               overflow={'hidden'}>
               <IconButton
