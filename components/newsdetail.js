@@ -12,7 +12,8 @@ import {
 
 import logo from '../public/10648693.jpg'
 
-export default function NewsDetail() {
+export default function NewsDetail({data}) {
+  console.log("data is :", data);
   return (
     <Center py={6}>
      <Box
@@ -29,7 +30,7 @@ export default function NewsDetail() {
             alt={'Author'}
           />
           <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-            <Text fontWeight={600}>Achim Rolle</Text>
+            <Text fontWeight={600}>User {data.userId}</Text>
             <Text color={'gray.500'}>Feb 08, 2021 · 6min read</Text>
           </Stack>
         </Stack> 
@@ -60,13 +61,10 @@ export default function NewsDetail() {
             color={useColorModeValue('gray.700', 'white')}
             fontSize={'2xl'}
             fontFamily={'body'}>
-            Boost your conversion rate
+            {data.title}
           </Heading>
           <Text color={'gray.500'}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum.
+          {data.body}
           </Text>
         </Stack>
       </Box>

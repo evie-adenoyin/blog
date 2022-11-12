@@ -10,7 +10,7 @@ import Hero from '../components/hero';
 import Testimony from '../components/testimonies';
 import NewsList from '../components/newslist';
 
-export default function Home() {
+export default function Home({data}) {
   return (
   
     <div >
@@ -22,7 +22,7 @@ export default function Home() {
 
       <Hero />
       <NewsHeading />
-      <NewsList header = "Today's news" />
+      <NewsList header = "Today's news" data = {data} />
       <Hero />
       <CallToActionWithVideo />
       <NewsAd />
@@ -31,4 +31,17 @@ export default function Home() {
       <Testimony />
     </div>
   )
+}
+const NewsApiEndPoint = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
+  const data = await res.json()
+  return data
+}
+
+export async function getStaticProps(){
+const data = await NewsApiEndPoint()
+return {
+    props: {data}
+}
+
 }
